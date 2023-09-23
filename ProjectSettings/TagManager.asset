@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Food
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Ground
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BG
+    uniqueID: 3331094815
+    locked: 0
+  - name: BG Decoration
+    uniqueID: 2723837449
+    locked: 0
+  - name: Platform Support
+    uniqueID: 1334807293
+    locked: 0
+  - name: Back Platforms
+    uniqueID: 2409175897
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Front Platforms
+    uniqueID: 3508721427
+    locked: 0
