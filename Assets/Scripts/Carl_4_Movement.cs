@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Carl2_Movement : MonoBehaviour
+public class Carl4_Movement : MonoBehaviour
 {
 
     [SerializeField] public float moveSpeed = 4.0f;
