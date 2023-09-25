@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Carl2_Movement : MonoBehaviour
+public class Carl4_Movement : MonoBehaviour
 {
 
     [SerializeField] public float moveSpeed = 4.0f;
@@ -11,6 +11,7 @@ public class Carl2_Movement : MonoBehaviour
     [SerializeField] public float doubleJumpPower = 6.0f;
     [SerializeField] private float moveInput;
     private float xDir = 0.0f;
+    private float yDir = 0.0f;
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
@@ -52,12 +53,13 @@ public class Carl2_Movement : MonoBehaviour
         flightTime = 0.0f;
         flyLimit = 5.0f;
         xDir = Input.GetAxisRaw("Horizontal");
+        yDir = Input.GetAxisRaw("Vertical");
 
-        // Horizontal movement
+        // Movement
         if (inWater())
         {
             rb.drag = 20.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
-            rb.velocity = new Vector2(xDir * swimSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
         }
         else
         {

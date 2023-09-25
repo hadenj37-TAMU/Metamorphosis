@@ -10,6 +10,7 @@ public class Carl2_Movement : MonoBehaviour
     [SerializeField] public float jumpPower = 5.0f;
     [SerializeField] private float moveInput;
     private float xDir = 0.0f;
+    private float yDir = 0.0f;
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
@@ -38,12 +39,12 @@ public class Carl2_Movement : MonoBehaviour
     private void Update()
     {
         xDir = Input.GetAxisRaw("Horizontal");
-
-        // Horizontal movement
+        yDir = Input.GetAxisRaw("Vertical");
+        // Movement
         if (inWater())
         {
-            rb.drag = 20.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
-            rb.velocity = new Vector2(xDir * swimSpeed, rb.velocity.y);
+            rb.drag = 15.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
+            rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
         }
         else
         {
