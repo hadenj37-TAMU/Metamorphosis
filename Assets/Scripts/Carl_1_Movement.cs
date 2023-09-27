@@ -11,6 +11,7 @@ public class Carl1_Movement : MonoBehaviour
     [SerializeField] private float moveInput;
     private float xDir = 0.0f;
     private float yDir = 0.0f;
+    
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
@@ -69,7 +70,6 @@ public class Carl1_Movement : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
-
         UpdateAnimationUpdate();
     }
 
