@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1100941681042037170}
   - component: {fileID: 8311991621450534276}
   - component: {fileID: 8161283259019138929}
+  - component: {fileID: -2134293291446343181}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -175,6 +176,20 @@ MonoBehaviour:
   jumpableGround:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &-2134293291446343181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1014232747781203546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1233b0f2af4d3e04d895a227ecea3209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FoodText: {fileID: 0}
+  nextForm: {fileID: 0}
 --- !u!1 &2258361819125155672
 GameObject:
   m_ObjectHideFlags: 0

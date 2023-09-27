@@ -7,8 +7,11 @@ public class Carl1_Movement : MonoBehaviour
 
     [SerializeField] public float moveSpeed = 4.0f;
     [SerializeField] public float swimSpeed = 2.0f;
+    [SerializeField] public float jumpPower = 5.0f;
     [SerializeField] private float moveInput;
     private float xDir = 0.0f;
+    private float yDir = 0.0f;
+    
     private Rigidbody2D rb;
     private Animator anim;
     private BoxCollider2D coll;
@@ -37,17 +40,22 @@ public class Carl1_Movement : MonoBehaviour
     private void Update()
     {
         xDir = Input.GetAxisRaw("Horizontal");
-
-        // Horizontal movement
+        yDir = Input.GetAxisRaw("Vertical");
+        // Movement
         if (inWater())
         {
-            rb.drag = 20.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
-            rb.velocity = new Vector2(xDir * swimSpeed, rb.velocity.y);
+            rb.drag = 15.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
+            rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
+        }
+        else if (!isGrounded())
+        {
+            rb.drag = 0.0f;
+            rb.velocity = new Vector2(xDir * moveSpeed, rb.velocity.y);
         }
         else
         {
             rb.drag = 0.0f;
-            rb.velocity = new Vector2(xDir * moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
         }
 
         //Vertical Movement
@@ -57,6 +65,11 @@ public class Carl1_Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
         }
 
+        //Jump Management
+        if (Input.GetButtonDown("Jump") && isGrounded())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
         UpdateAnimationUpdate();
     }
 
