@@ -132,7 +132,6 @@ public class Carl4_Movement : MonoBehaviour
         {
             fallDrift();
         }
-        slowFall = !slowFall;
 
         UpdateAnimationUpdate();
     }
