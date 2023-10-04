@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2609058635435786092, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
       propertyPath: jumpPower
-      value: 10
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2609058635435786092, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
       propertyPath: moveSpeed
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2609058635435786092, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
       propertyPath: swimSpeed
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2609058635435786092, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
       propertyPath: jumpableGround.m_Bits
@@ -106,6 +106,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942380009092060231, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987075272495644519, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
+      propertyPath: m_GravityScale
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6333073484283073550, guid: f39a8c55bd4a969448822d5abb286b1b, type: 3}
