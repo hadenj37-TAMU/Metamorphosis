@@ -8,7 +8,6 @@ public class Carl2_Movement : MonoBehaviour
     [SerializeField] public float moveSpeed = 4.0f;
     [SerializeField] public float swimSpeed = 2.0f;
     [SerializeField] public float jumpPower = 5.0f;
-    [SerializeField] private float moveInput;
     private float xDir = 0.0f;
     private float yDir = 0.0f;
     private Rigidbody2D rb;
@@ -40,29 +39,44 @@ public class Carl2_Movement : MonoBehaviour
     {
         xDir = Input.GetAxisRaw("Horizontal");
         yDir = Input.GetAxisRaw("Vertical");
+        
         // Movement
         if (inWater())
         {
-            rb.drag = 15.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
-            rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
+            rb.drag = 10.0f; //Carl needs to sink slower than he falls, or at least, slow down when hitting water
+            
+            // swim fast if input, otherwise sink
+            if(yDir == 0.0f && xDir == 0.0f) 
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
+            else 
+                rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
+
+            // jump button in water swims up, too
+            if (Input.GetButton("Jump"))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
+            }
         }
-        else
+        else if (isGrounded())
         {
+            // Initiate jump
+            if (Input.GetButtonDown("Jump"))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            }
+
             rb.drag = 0.0f;
             rb.velocity = new Vector2(xDir * moveSpeed, rb.velocity.y);
         }
-
-        //Vertical Movement
-        //Swimming
-        if (Input.GetButton("Jump") && inWater())
+        else //in air
         {
-            rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
-        }
+            if (Input.GetButtonUp("Jump"))
+            {
+                rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
 
-        //Jump Management
-        if (Input.GetButtonDown("Jump") && isGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            rb.drag = 0.0f;
+            rb.velocity = new Vector2(xDir * moveSpeed, rb.velocity.y);
         }
 
         UpdateAnimationUpdate();
@@ -73,10 +87,12 @@ public class Carl2_Movement : MonoBehaviour
         if (xDir > 0f)
         {
             sprite.flipX = true;
+            coll.offset = new Vector2(0.3186287f,coll.offset.y);
         }
         else if (xDir < 0f)
         {
             sprite.flipX = false;
+            coll.offset = new Vector2(-0.3186287f, coll.offset.y);
         }
     }
 
