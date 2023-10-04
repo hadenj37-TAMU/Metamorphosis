@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!114 &-2134293291446343181
 MonoBehaviour:
   m_ObjectHideFlags: 0
