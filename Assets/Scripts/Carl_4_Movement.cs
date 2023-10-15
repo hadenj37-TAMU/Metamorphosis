@@ -16,6 +16,7 @@ public class Carl4_Movement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
+    private Vector2 _respawnPoint;
     private bool doubleJump;
     private bool flyJump;
     private bool slowFall;
@@ -24,6 +25,7 @@ public class Carl4_Movement : MonoBehaviour
     int jumpCount;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask swimWater;
+    [SerializeField] private bool _active = true;
 
     private void Start()
     {
@@ -31,6 +33,7 @@ public class Carl4_Movement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        SetRespawnPoint(transform.position);
     }
 
     private bool isGrounded()
@@ -48,8 +51,33 @@ public class Carl4_Movement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.up, 0.1f, swimWater);
     }
 
+    public void Die()
+    {
+        _active = false;
+        coll.enabled = false;
+        StartCoroutine(Respawn());
+    }
+
+    public void SetRespawnPoint(Vector2 position)
+    {
+        _respawnPoint = position;
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = _respawnPoint;
+        _active = true;
+        coll.enabled = true;
+    }
+
     private void Update()
     {
+        if (!_active)
+        {
+            return;
+        }
+
         flightTime = 0.0f;
         flyLimit = 5.0f;
         xDir = Input.GetAxisRaw("Horizontal");
