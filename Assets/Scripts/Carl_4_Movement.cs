@@ -23,6 +23,7 @@ public class Carl4_Movement : MonoBehaviour
     float flightTime;
     float flyLimit;
     int jumpCount;
+    [SerializeField] private LayerMask waterFalling;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask swimWater;
     [SerializeField] private bool _active = true;
@@ -49,6 +50,11 @@ public class Carl4_Movement : MonoBehaviour
     private bool inWater()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.up, 0.1f, swimWater);
+    }
+
+    private bool inWaterFall()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.up, 0.1f, waterFalling);
     }
 
     public void Die()
@@ -88,16 +94,28 @@ public class Carl4_Movement : MonoBehaviour
         {
             rb.drag = 20.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
             rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
+            rb.gravityScale = 1.2f;
+        }
+        else if (inWaterFall())
+        {
+            rb.gravityScale = 8;
+            rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
         }
         else
         {
             rb.drag = 0.0f;
             rb.velocity = new Vector2(xDir * moveSpeed, rb.velocity.y);
+            rb.gravityScale = 1.2f;
         }
 
         //Vertical Movement
         //Swimming
         if (Input.GetButton("Jump") && inWater())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
+        }
+        //Waterfall
+        if (Input.GetButton("Jump") && inWaterFall())
         {
             rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
         }
