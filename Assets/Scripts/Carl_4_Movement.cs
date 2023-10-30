@@ -98,7 +98,7 @@ public class Carl4_Movement : MonoBehaviour
         }
         else if (inWaterFall())
         {
-            rb.gravityScale = 8;
+            rb.gravityScale = 10;
             rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
         }
         else
