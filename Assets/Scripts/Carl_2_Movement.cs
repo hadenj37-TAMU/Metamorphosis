@@ -12,17 +12,19 @@ public class Carl2_Movement : MonoBehaviour
     private float yDir = 0.0f;
     private Rigidbody2D rb;
     private Animator anim;
-    private BoxCollider2D coll;
+    private PolygonCollider2D coll;
     private SpriteRenderer sprite;
+    private Transform trans;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask swimWater;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        coll = GetComponent<BoxCollider2D>();
+        coll = GetComponent<PolygonCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        trans = GetComponent<Transform>();
     }
 
     private bool isGrounded()
@@ -86,14 +88,23 @@ public class Carl2_Movement : MonoBehaviour
     {
         if (xDir > 0f)
         {
-            sprite.flipX = true;
-            coll.offset = new Vector2(0.3186287f,coll.offset.y);
+            trans.localScale = new Vector3(-1.0f,1.0f,1.0f);
+            anim.SetBool("moving", true);
         }
         else if (xDir < 0f)
         {
-            sprite.flipX = false;
-            coll.offset = new Vector2(-0.3186287f, coll.offset.y);
+            trans.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            anim.SetBool("moving", true);
         }
+        else 
+        {
+            if (yDir == 0f) { anim.SetBool("moving", false); }
+            else { anim.SetBool("moving", true); }
+        }
+
+        anim.SetBool("jumping", Input.GetButton("Jump"));
+        anim.SetBool("grounded", isGrounded());
+        anim.SetBool("inWater", inWater());
     }
 
 }
