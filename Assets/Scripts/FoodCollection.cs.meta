@@ -3,9 +3,7 @@ guid: 1233b0f2af4d3e04d895a227ecea3209
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - FoodText: {instanceID: 0}
-  - nextForm: {fileID: 5591914746600287609, guid: 4288ba26083855c49b18be26725f14d8, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

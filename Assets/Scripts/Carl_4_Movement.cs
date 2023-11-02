@@ -16,14 +16,17 @@ public class Carl4_Movement : MonoBehaviour
     private Animator anim;
     private BoxCollider2D coll;
     private SpriteRenderer sprite;
+    private Vector2 _respawnPoint;
     private bool doubleJump;
     private bool flyJump;
     private bool slowFall;
     float flightTime;
     float flyLimit;
     int jumpCount;
+    [SerializeField] private LayerMask waterFalling;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask swimWater;
+    [SerializeField] private bool _active = true;
 
     private void Start()
     {
@@ -31,6 +34,7 @@ public class Carl4_Movement : MonoBehaviour
         coll = GetComponent<BoxCollider2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        SetRespawnPoint(transform.position);
     }
 
     private bool isGrounded()
@@ -48,8 +52,38 @@ public class Carl4_Movement : MonoBehaviour
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.up, 0.1f, swimWater);
     }
 
+    private bool inWaterFall()
+    {
+        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.up, 0.1f, waterFalling);
+    }
+
+    public void Die()
+    {
+        _active = false;
+        coll.enabled = false;
+        StartCoroutine(Respawn());
+    }
+
+    public void SetRespawnPoint(Vector2 position)
+    {
+        _respawnPoint = position;
+    }
+
+    private IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(1f);
+        transform.position = _respawnPoint;
+        _active = true;
+        coll.enabled = true;
+    }
+
     private void Update()
     {
+        if (!_active)
+        {
+            return;
+        }
+
         flightTime = 0.0f;
         flyLimit = 5.0f;
         xDir = Input.GetAxisRaw("Horizontal");
@@ -60,16 +94,28 @@ public class Carl4_Movement : MonoBehaviour
         {
             rb.drag = 20.0f; //Carl needs to sink slower than he falls, or at minimum, slow down when hitting water
             rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
+            rb.gravityScale = 1.2f;
+        }
+        else if (inWaterFall())
+        {
+            rb.gravityScale = 10;
+            rb.velocity = new Vector2(xDir * swimSpeed, yDir * swimSpeed);
         }
         else
         {
             rb.drag = 0.0f;
             rb.velocity = new Vector2(xDir * moveSpeed, rb.velocity.y);
+            rb.gravityScale = 1.2f;
         }
 
         //Vertical Movement
         //Swimming
         if (Input.GetButton("Jump") && inWater())
+        {
+            rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
+        }
+        //Waterfall
+        if (Input.GetButton("Jump") && inWaterFall())
         {
             rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
         }
@@ -132,7 +178,6 @@ public class Carl4_Movement : MonoBehaviour
         {
             fallDrift();
         }
-        slowFall = !slowFall;
 
         UpdateAnimationUpdate();
     }

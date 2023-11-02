@@ -27,7 +27,7 @@ public class FoodCollection : MonoBehaviour
             collected++;
             FoodText.text = "Food: " + collected + "/10";
             if (collected == 10) {
-                Invoke("Mature", 2f);
+                Invoke("Mature", 0.5f);
             }
         }
     }
