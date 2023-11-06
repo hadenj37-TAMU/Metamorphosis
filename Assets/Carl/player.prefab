@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1100941681042037170}
   - component: {fileID: 8311991621450534276}
   - component: {fileID: 8161283259019138929}
-  - component: {fileID: -2134293291446343181}
+  - component: {fileID: 5695577981544299008}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -175,8 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpableGround:
     serializedVersion: 2
-    m_Bits: 8
---- !u!114 &-2134293291446343181
+    m_Bits: 0
+--- !u!114 &5695577981544299008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodText: {fileID: 0}
-  nextForm: {fileID: 0}
+  nextForm: {fileID: 5591914746600287609, guid: 4288ba26083855c49b18be26725f14d8, type: 3}
 --- !u!1 &2258361819125155672
 GameObject:
   m_ObjectHideFlags: 0
