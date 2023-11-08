@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool doubleJump;
     private float doubleJumpingPower = 12f;
      private float jumpingPower = 16f;
-     [SerializeField] public float swimSpeed = 2.0f;
+     [SerializeField] public float swimSpeed = 4.0f;
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask swimWater;
     // Start is called before the first frame update
@@ -30,31 +30,38 @@ public class PlayerMovement : MonoBehaviour
         float dirY = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
 
-        if(inWater()){
-            rb.drag = 10.0f; //Carl needs to sink slower than he falls, or at least, slow down when hitting water
-            if(dirY == 0.0f && dirX == 0.0f) 
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
-            else 
-                rb.velocity = new Vector2(dirX * swimSpeed, dirY * swimSpeed);
+       if (inWater())
+{
+    // Swimming in water
+    rb.drag = 10.0f; // Adjust drag for water physics
 
-            // jump button in water swims up, too
-            if (Input.GetButton("Jump"))
-            {
-                rb.velocity = new Vector2(rb.velocity.x, swimSpeed);
-            }
-        }
-        if(IsGrounded() && !Input.GetButton("Jump")){
-            doubleJump = false;
-        }
+    if (dirY == 0.0f && dirX == 0.0f)
+        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y);
+    else
+        rb.velocity = new Vector2(dirX * swimSpeed, dirY * swimSpeed);
+}
+else
+{
+    // Standard jumping on non-water ground
+    rb.drag = 0.0f;
 
-        if(Input.GetButtonDown("Jump") && (IsGrounded() || doubleJump)){
-            rb.velocity = new Vector3(rb.velocity.x, doubleJump ? doubleJumpingPower : jumpingPower);
-            doubleJump = !doubleJump;
-        }
+    if (IsGrounded() && !Input.GetButton("Jump"))
+    {
+        doubleJump = false;
+    }
 
-        if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
+    if (Input.GetButtonDown("Jump") && (IsGrounded() || doubleJump))
+    {
+        rb.velocity = new Vector2(rb.velocity.x, doubleJump ? doubleJumpingPower : jumpingPower);
+        doubleJump = !doubleJump;
+    }
+
+    if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+    {
+        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+    }
+}
+
 
         
     }
