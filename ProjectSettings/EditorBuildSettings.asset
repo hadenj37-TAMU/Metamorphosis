@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SwampLevel.unity
     guid: f61921419d4d1498ea0d9b3c0c676ab7
   - enabled: 1
-    path: Assets/Scenes/ForestLevel.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 2f41cebc6607d44118c85c555ad79581
   - enabled: 1
     path: Assets/Scenes/CiffsLevel.unity
