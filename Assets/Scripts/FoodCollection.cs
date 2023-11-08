@@ -12,11 +12,12 @@ public class FoodCollection : MonoBehaviour
 
     private void Mature() 
     {
-        GameObject newModel = Instantiate(nextForm, transform.position, transform.rotation);
-        Transform cam = transform.GetChild(0);
         collected = 0;
         FoodText.text = "Food: " + collected + "/10";
-        Destroy(gameObject);
+
+        GameObject newModel = Instantiate(nextForm, transform.position, transform.rotation);
+        gameObject.transform.SetParent(newModel.transform);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
