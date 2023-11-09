@@ -1526,7 +1526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3090514811663012562, guid: 95434a2ea5df95447834a00d88a998fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 3090514811663012562, guid: 95434a2ea5df95447834a00d88a998fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20614,7 +20614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3090514811663012562, guid: 95434a2ea5df95447834a00d88a998fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.43
       objectReference: {fileID: 0}
     - target: {fileID: 3090514811663012562, guid: 95434a2ea5df95447834a00d88a998fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21583,10 +21583,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dfbd5301409c74da38c5715b9ff821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 4
-  swimSpeed: 3.5
-  jumpPower: 6
-  doubleJumpPower: 7
+  moveSpeed: 6
+  swimSpeed: 5
+  jumpPower: 11
+  doubleJumpPower: 11
   moveInput: 0
   waterFalling:
     serializedVersion: 2
