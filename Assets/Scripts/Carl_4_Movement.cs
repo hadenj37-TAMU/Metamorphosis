@@ -28,6 +28,8 @@ public class Carl4_Movement : MonoBehaviour
     [SerializeField] private LayerMask swimWater;
     [SerializeField] private bool _active = true;
 
+    private enum MovementState {idle, walking};
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -184,14 +186,23 @@ public class Carl4_Movement : MonoBehaviour
 
     private void UpdateAnimationUpdate()
     {
+        MovementState state;
+
         if (xDir > 0f)
         {
+            state = MovementState.walking;
             sprite.flipX = true;
         }
         else if (xDir < 0f)
         {
+            state = MovementState.walking;
             sprite.flipX = false;
         }
-    }
+        else
+        {
+            state = MovementState.idle;
+        }
 
+        anim.SetInteger("state", (int)state);
+    }
 }
