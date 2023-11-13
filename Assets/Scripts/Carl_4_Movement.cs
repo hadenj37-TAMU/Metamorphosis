@@ -176,7 +176,7 @@ public class Carl4_Movement : MonoBehaviour
             }
         }
         //Drift mechanic, only available after fly-jump
-        if (Input.GetKey("space") && rb.velocity.y < 0 && slowFall)
+        if (Input.GetKey("space") && rb.velocity.y < 0)
         {
             fallDrift();
         }
