@@ -14223,11 +14223,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 315332098393838248, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.9
+      value: -10.77
       objectReference: {fileID: 0}
     - target: {fileID: 315332098393838248, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.83
+      value: 2.68
       objectReference: {fileID: 0}
     - target: {fileID: 315332098393838248, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14276,6 +14276,22 @@ PrefabInstance:
     - target: {fileID: 7155722504446740674, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: orthographic size
       value: 7.2733774
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155722504446740674, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155722504446740674, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.83921576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155722504446740674, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.5686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7155722504446740674, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.24705884
       objectReference: {fileID: 0}
     - target: {fileID: 8161283259019138929, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: swimWater.m_Bits
