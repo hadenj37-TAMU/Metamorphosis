@@ -196,7 +196,6 @@ MonoBehaviour:
   moveSpeed: 3
   swimSpeed: 3.5
   jumpPower: 5
-  moveInput: 0
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
@@ -216,6 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodText: {fileID: 0}
+  nextForm: {fileID: 8783556964480172671, guid: a3fabe9d5cbc7e64b8e63a369b8817eb, type: 3}
 --- !u!1 &270892816933524319
 GameObject:
   m_ObjectHideFlags: 0
