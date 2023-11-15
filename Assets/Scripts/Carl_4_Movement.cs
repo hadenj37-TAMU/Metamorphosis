@@ -188,12 +188,12 @@ public class Carl4_Movement : MonoBehaviour
     {
         MovementState state;
 
-        if (xDir > 0f)
+        if (xDir > 0f && isGrounded())
         {
             state = MovementState.walking;
             sprite.flipX = true;
         }
-        else if (xDir < 0f)
+        else if (xDir < 0f && isGrounded())
         {
             state = MovementState.walking;
             sprite.flipX = false;
