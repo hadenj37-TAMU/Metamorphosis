@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,6 +106,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -124,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 093ff32f36ce242498058107449dd125
-      internalID: 761637698
+      spriteID: e24b1f9cd8ca67140b75cfca773aa860
+      internalID: 698125972
       vertices: []
       indices: 
       edges: []
@@ -145,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c38f4c449c17754d887e83e98f00985
-      internalID: 618735845
+      spriteID: c83647f1074015e478df2014365c56ed
+      internalID: -304097700
       vertices: []
       indices: 
       edges: []
@@ -166,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5281bf3d16f36d94a81dbd202fd88903
-      internalID: 1440406768
+      spriteID: d2e5f9591ab2ef944af46718d262a4ff
+      internalID: 1331168721
       vertices: []
       indices: 
       edges: []
@@ -187,8 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7a56c55526a8304488f9d9aeef8d352
-      internalID: 435436924
+      spriteID: 73aa609b269d9aa48970078f977fd24c
+      internalID: 776243536
       vertices: []
       indices: 
       edges: []
@@ -208,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a8015877b4ccf447b04e72b2d917357
-      internalID: -485475550
+      spriteID: 278752b6f2384744c9c0f8349840c943
+      internalID: -1773219952
       vertices: []
       indices: 
       edges: []
@@ -229,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e26b0b6874bdd342af8f29d1a59b54f
-      internalID: 1516417383
+      spriteID: 8e11a81d0fc489a4d9a22644e1779feb
+      internalID: 1508120607
       vertices: []
       indices: 
       edges: []
@@ -250,8 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c4936e7064e37b4fa9105542ee6a7ca
-      internalID: 1592414980
+      spriteID: d130662e9cab6be4a8408c1f1828626d
+      internalID: -560406477
       vertices: []
       indices: 
       edges: []
@@ -271,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbf2cac4b71844246b4ef19f63733db0
-      internalID: -1022686486
+      spriteID: 9bc3990e8e06ca84ca042dd63a7ea6bd
+      internalID: -1966175262
       vertices: []
       indices: 
       edges: []
@@ -292,8 +305,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1988d1cc938a07e41b9046301c3f0d86
-      internalID: -1876094304
+      spriteID: 2411edac5da43f048aa21554df782ef7
+      internalID: -187614702
       vertices: []
       indices: 
       edges: []
@@ -309,15 +322,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      carlswimanimation_0: 761637698
-      carlswimanimation_1: 618735845
-      carlswimanimation_2: 1440406768
-      carlswimanimation_3: 435436924
-      carlswimanimation_4: -485475550
-      carlswimanimation_5: 1516417383
-      carlswimanimation_6: 1592414980
-      carlswimanimation_7: -1022686486
-      carlswimanimation_8: -1876094304
+      carlswimanimation_0: 698125972
+      carlswimanimation_1: -304097700
+      carlswimanimation_2: 1331168721
+      carlswimanimation_3: 776243536
+      carlswimanimation_4: -1773219952
+      carlswimanimation_5: 1508120607
+      carlswimanimation_6: -560406477
+      carlswimanimation_7: -1966175262
+      carlswimanimation_8: -187614702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
