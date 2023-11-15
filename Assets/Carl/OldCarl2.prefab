@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1995930968735178546}
   - component: {fileID: 2609058635435786092}
   - component: {fileID: 7470096819139288690}
+  - component: {fileID: 2932279803826750974}
   m_Layer: 0
   m_Name: OldCarl2
   m_TagString: Player
@@ -32,8 +33,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5942644123503945323}
   m_Father: {fileID: 0}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f82f2866d25221c4d982dfc727768efb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c3907d92fae6f740afa84a4df0874b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +106,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -149,18 +150,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.13508597, y: -0.10923052}
+  m_Offset: {x: -0.2908993, y: -0.07926637}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.902439, y: 3.902439}
+    oldSize: {x: 4, y: 4}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.60537857, y: 0.75261533}
+  m_Size: {x: 1.7320294, y: 1.7234527}
   m_EdgeRadius: 0
 --- !u!251 &1995930968735178546
 PlatformEffector2D:
@@ -193,10 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187638f5c66fe4f4b9719c89dbc4e8d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  swimSpeed: 3.5
-  jumpPower: 5
-  moveInput: 0
+  moveSpeed: 2
+  swimSpeed: 4
+  jumpPower: 3
   jumpableGround:
     serializedVersion: 2
     m_Bits: 8
@@ -216,6 +216,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodText: {fileID: 0}
+  nextForm: {fileID: 0}
+--- !u!60 &2932279803826750974
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203715224225115843}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.7587619, y: -0.4238742}
+      - {x: 0.7367933, y: -0.117421985}
+      - {x: 0.6882651, y: 0.2852484}
+      - {x: 0.50417155, y: 0.6913252}
+      - {x: 0.1909064, y: 1.0030603}
+      - {x: -0.23978066, y: 1.0250292}
+      - {x: -0.61478055, y: 1.0428264}
+      - {x: -1.0928116, y: 0.6435623}
+      - {x: -1.2810769, y: -0.08446872}
+      - {x: -1.3140302, y: -0.44243658}
+      - {x: -1.2954676, y: -0.8242495}
+      - {x: -1.2803118, y: -1.149264}
+      - {x: -1.1840937, y: -1.5420613}
+      - {x: -1.0185623, y: -1.7473586}
+      - {x: 0.19584307, y: -1.7253897}
+      - {x: 0.25570172, y: -0.9413254}
+      - {x: 0.5632651, y: -0.72956145}
+    - - {x: -0.5, y: -1.25}
+      - {x: -0.3125, y: -1.25}
+      - {x: -0.25, y: -1.1875}
+      - {x: -0.3125, y: -1.3125}
+      - {x: -0.5, y: -1.3125}
+  m_UseDelaunayMesh: 0
 --- !u!1 &270892816933524319
 GameObject:
   m_ObjectHideFlags: 0

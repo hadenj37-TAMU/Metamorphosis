@@ -173,9 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d773749cf866145c283188ebbfd193f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swimSpeed: 4
   jumpableGround:
     serializedVersion: 2
     m_Bits: 72
+  swimWater:
+    serializedVersion: 2
+    m_Bits: 16
 --- !u!114 &5971972992611780904
 MonoBehaviour:
   m_ObjectHideFlags: 0
