@@ -28,7 +28,7 @@ public class Carl4_Movement : MonoBehaviour
     [SerializeField] private LayerMask swimWater;
     [SerializeField] private bool _active = true;
 
-    private enum MovementState {idle, walking};
+    private enum MovementState {idle, walking, jumping};
 
     private void Start()
     {
@@ -175,7 +175,7 @@ public class Carl4_Movement : MonoBehaviour
                 slowFall = !slowFall;
             }
         }
-        //Drift mechanic, only available after fly-jump
+        //Drift mechanic
         if (Input.GetKey("space") && rb.velocity.y < 0)
         {
             fallDrift();
@@ -201,6 +201,19 @@ public class Carl4_Movement : MonoBehaviour
         else
         {
             state = MovementState.idle;
+        }
+
+        if (Input.GetKey("space"))
+        {
+            state = MovementState.jumping;
+            if (xDir > 0f)
+            {
+                sprite.flipX = true;
+            }
+            else if (xDir < 0f)
+            {
+                sprite.flipX = false;
+            }
         }
 
         anim.SetInteger("state", (int)state);
