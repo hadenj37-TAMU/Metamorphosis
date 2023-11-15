@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4733771235140008697}
   - component: {fileID: 3651269960544588302}
   - component: {fileID: 6733898061955893625}
+  - component: {fileID: 5236232311443437427}
   m_Layer: 0
   m_Name: Carl4
   m_TagString: Player
@@ -105,7 +106,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -149,18 +150,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.067837924, y: 0.5744562}
+  m_Offset: {x: -0.06424579, y: -0.0038802624}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 4}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0399995, y: 3.9132657}
+  m_Size: {x: 1.1850672, y: 1.8657389}
   m_EdgeRadius: 0
 --- !u!251 &4733771235140008697
 PlatformEffector2D:
@@ -193,10 +194,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dfbd5301409c74da38c5715b9ff821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  swimSpeed: 3.5
-  jumpPower: 6
-  doubleJumpPower: 7
+  moveSpeed: 5.5
+  swimSpeed: 4.5
+  jumpPower: 9.5
+  doubleJumpPower: 9.5
   moveInput: 0
   waterFalling:
     serializedVersion: 2
@@ -222,6 +223,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodText: {fileID: 0}
   nextForm: {fileID: 0}
+--- !u!95 &5236232311443437427
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5591914746600287609}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9bed850cc1e054f4e9038c3f3a889186, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9043763885048650250
 GameObject:
   m_ObjectHideFlags: 0
