@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private BoxCollider2D coll;
     private Animator anim;
     private SpriteRenderer sprite;
+    private float dirX = 0.0f;
+    private float dirY = 0.0f;
     private bool doubleJump;
     private float doubleJumpingPower = 12f;
      private float jumpingPower = 16f;
@@ -26,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX = Input.GetAxisRaw("Horizontal");
-        float dirY = Input.GetAxisRaw("Vertical");
+         dirX = Input.GetAxisRaw("Horizontal");
+         dirY = Input.GetAxisRaw("Vertical");
         rb.velocity = new Vector2(dirX * 7f, rb.velocity.y);
 
        if (inWater())
@@ -62,7 +64,7 @@ else
     }
 }
 
-
+UpdateAnimationUpdate();
         
     }
 
@@ -75,5 +77,17 @@ else
     private bool inWater()
     {
         return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.up, 0.1f, swimWater);
+    }
+
+    private void UpdateAnimationUpdate()
+    {
+        if (dirX > 0f)
+        {
+            sprite.flipX = true;
+        }
+        else if (dirX < 0f)
+        {
+            sprite.flipX = false;
+        }
     }
 }
