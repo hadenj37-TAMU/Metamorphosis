@@ -770,14 +770,6 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 7559129980468425605, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7559129980468425605, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 9128545738287477306, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
       propertyPath: FoodText
       value: 
@@ -792,7 +784,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7483150950297912842, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2059170465}
+      addedObject: {fileID: 1332829776}
   m_SourcePrefab: {fileID: 100100000, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
 --- !u!1 &584729130
 GameObject:
@@ -97824,7 +97816,7 @@ Animator:
   m_GameObject: {fileID: 1332829775}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 073f719bc50a212499d46719278e985f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f6eca88bfede3944d982f15d2814beab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -110640,32 +110632,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2059170457 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7483150950297912842, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
-  m_PrefabInstance: {fileID: 551445052}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &2059170465
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059170457}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6eca88bfede3944d982f15d2814beab, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2147302144
 PrefabInstance:
   m_ObjectHideFlags: 0
