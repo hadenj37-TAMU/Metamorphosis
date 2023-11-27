@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     private BoxCollider2D coll;
-    private Animator anim;
+    [SerializeField] private Animator anim;
     private SpriteRenderer sprite;
     private float dirX = 0.0f;
     private float dirY = 0.0f;
@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
     [SerializeField] private LayerMask swimWater;
     // Start is called before the first frame update
+    private bool isJumping;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -56,6 +57,7 @@ else
     {
         rb.velocity = new Vector2(rb.velocity.x, doubleJump ? doubleJumpingPower : jumpingPower);
         doubleJump = !doubleJump;
+        isJumping = true;
     }
 
     if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
@@ -81,6 +83,7 @@ UpdateAnimationUpdate();
 
     private void UpdateAnimationUpdate()
     {
+         anim.SetBool("IsJumping", isJumping);
         if (dirX > 0f)
         {
             sprite.flipX = true;
@@ -89,5 +92,11 @@ UpdateAnimationUpdate();
         {
             sprite.flipX = false;
         }
+        else
+        {
+            // Player is not moving horizontally, set IsJumping to false
+            isJumping = false;
+        }
+    
     }
 }
