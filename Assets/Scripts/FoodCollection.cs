@@ -24,7 +24,7 @@ public class FoodCollection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Food"))
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             collected++;
             FoodText.text = "Food: " + collected + "/10";
             if (collected == 10) {
