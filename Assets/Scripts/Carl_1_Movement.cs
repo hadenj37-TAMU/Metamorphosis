@@ -83,6 +83,8 @@ public class Carl1_Movement : MonoBehaviour
         {
             sprite.flipX = false;
         }
+
+        anim.SetBool("moving", xDir != 0.0 || yDir != 0.0);
     }
 
 }
