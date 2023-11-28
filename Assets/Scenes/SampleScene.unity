@@ -1060,7 +1060,7 @@ GameObject:
   - component: {fileID: 760580156}
   - component: {fileID: 760580155}
   - component: {fileID: 760580160}
-  m_Layer: 4
+  m_Layer: 8
   m_Name: Rapids
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38939,7 +38939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1807bf5eff14347968c9cee1c904a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!251 &1047233551
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -41886,8 +41885,16 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8161283259019138929, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: rapidSpeed
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8161283259019138929, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: swimWater.m_Bits
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8161283259019138929, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: rapidWater.m_Bits
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 8161283259019138929, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: jumpableGround.m_Bits
