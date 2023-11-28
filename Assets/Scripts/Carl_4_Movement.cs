@@ -28,7 +28,7 @@ public class Carl4_Movement : MonoBehaviour
     [SerializeField] private LayerMask swimWater;
     [SerializeField] private bool _active = true;
 
-    private enum MovementState {idle, walking, jumping, falling};
+    private enum MovementState {idle, walking, jumping, falling, swimming};
 
     private void Start()
     {
@@ -188,7 +188,21 @@ public class Carl4_Movement : MonoBehaviour
     {
         MovementState state;
 
-        if (xDir > 0f && isGrounded())
+        //swimming
+        if (inWater() || inWaterFall())
+        {
+            state = MovementState.swimming;
+            if (xDir > 0f)
+            {
+                sprite.flipX = true;
+            }
+            else if (xDir < 0f)
+            {
+                sprite.flipX = false;
+            }
+        }
+        //walking
+        else if (xDir > 0f && isGrounded())
         {
             state = MovementState.walking;
             sprite.flipX = true;
@@ -198,12 +212,14 @@ public class Carl4_Movement : MonoBehaviour
             state = MovementState.walking;
             sprite.flipX = false;
         }
+        //idle
         else
         {
             state = MovementState.idle;
         }
 
-        if (Input.GetKey("space"))
+        //jumping/flying/gliding
+        if (Input.GetKey("space") && !inWater() && !inWaterFall())
         {
             state = MovementState.jumping;
             if (xDir > 0f)
@@ -215,10 +231,10 @@ public class Carl4_Movement : MonoBehaviour
                 sprite.flipX = false;
             }
         }
-        else if (rb.velocity.y < -.1f || !isGrounded())
+        else if (rb.velocity.y < -.1f || !isGrounded() && !inWater() && !inWaterFall())
         {
             state = MovementState.falling;
-            if(xDir > 0f)
+            if (xDir > 0f)
             {
                 sprite.flipX = true;
             }
