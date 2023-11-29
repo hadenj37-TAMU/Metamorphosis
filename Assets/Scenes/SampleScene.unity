@@ -40707,7 +40707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc1807bf5eff14347968c9cee1c904a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
 --- !u!251 &1047233551
 PlatformEffector2D:
   m_ObjectHideFlags: 0
