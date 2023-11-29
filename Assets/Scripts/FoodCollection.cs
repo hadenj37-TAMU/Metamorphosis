@@ -9,6 +9,13 @@ public class FoodCollection : MonoBehaviour
 
     [SerializeField] private Text FoodText;
     [SerializeField] public GameObject nextForm;
+    public AudioClip playFoodSound;
+    public AudioSource myAudioSource;
+
+    private void Start()
+    {
+        myAudioSource = GetComponent<AudioSource>();
+    }
 
     private void Mature() 
     {
@@ -24,6 +31,9 @@ public class FoodCollection : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Food"))
         {
+            //play collection sound
+            myAudioSource.PlayOneShot(playFoodSound, 1);
+
             collision.gameObject.SetActive(false);
             collected++;
             FoodText.text = "Food: " + collected + "/10";
