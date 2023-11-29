@@ -128,26 +128,23 @@ public class Carl4_Movement : MonoBehaviour
             doubleJump = false;
             flyJump = false;
             slowFall = false;
-            jumpCount = 0;
         }
         if (Input.GetButtonDown("Jump") && (isGrounded() || doubleJump))
         {
             rb.velocity = new Vector2(rb.velocity.x, doubleJump ? doubleJumpPower : jumpPower);
             doubleJump = !doubleJump;
-            jumpCount += 1;
+            print("jump");
 
         }
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
+        if (Input.GetButtonUp("Jump") && doubleJump == false)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            if (doubleJump == false)
-            {
-                flyJump = !flyJump;
-            }
+            flyJump = !flyJump;
         }
         //Fly-jump mechanic
-        if (Input.GetButton("Jump") && jumpCount == 2 & flyJump)
+        if (Input.GetButton("Jump") && flyJump)
         {
+            print("flying");
             float jumpDrag = 15;
             while (flightTime < flyLimit)
             {
@@ -168,12 +165,8 @@ public class Carl4_Movement : MonoBehaviour
                     rb.drag = jumpDrag;
                 }
             }
-            jumpCount += 1;
-            if (flightTime >= flyLimit)
-            {
-                flyJump = false;
-                slowFall = !slowFall;
-            }
+            flyJump = false;
+            print("flyjump: " + flyJump);
         }
         //Drift mechanic
         if (Input.GetKey("space") && rb.velocity.y < 0)
