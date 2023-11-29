@@ -25,7 +25,6 @@ public class endGame : MonoBehaviour
         {
                 if (collision.gameObject.tag == "Player")
             {
-                print("collision detected");
                 cutscene.SetActive(true);
                 StartCoroutine(FinishCut());
             }
