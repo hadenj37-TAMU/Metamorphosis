@@ -19,9 +19,6 @@ public class Carl4_Movement : MonoBehaviour
     private Vector2 _respawnPoint;
     private bool doubleJump;
     private bool flyJump;
-    private bool slowFall;
-    float flightTime;
-    float flyLimit;
     int jumpCount;
     [SerializeField] private LayerMask waterFalling;
     [SerializeField] private LayerMask jumpableGround;
@@ -86,8 +83,6 @@ public class Carl4_Movement : MonoBehaviour
             return;
         }
 
-        flightTime = 0.0f;
-        flyLimit = 5.0f;
         xDir = Input.GetAxisRaw("Horizontal");
         yDir = Input.GetAxisRaw("Vertical");
 
@@ -127,46 +122,25 @@ public class Carl4_Movement : MonoBehaviour
         {
             doubleJump = false;
             flyJump = false;
-            slowFall = false;
+            jumpCount = 0;
+
         }
         if (Input.GetButtonDown("Jump") && (isGrounded() || doubleJump))
         {
+            jumpCount += 1;
             rb.velocity = new Vector2(rb.velocity.x, doubleJump ? doubleJumpPower : jumpPower);
             doubleJump = !doubleJump;
-            print("jump");
-
         }
-        if (Input.GetButtonUp("Jump") && doubleJump == false)
+        if (Input.GetButtonUp("Jump") && doubleJump == false && jumpCount == 2)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             flyJump = !flyJump;
         }
         //Fly-jump mechanic
-        if (Input.GetButton("Jump") && flyJump)
+        if (Input.GetButton("Jump") && flyJump == true)
         {
-            print("flying");
-            float jumpDrag = 15;
-            while (flightTime < flyLimit)
-            {
-                float x = flightTime;
-                double charUp = 0.092 * System.Math.Pow(x, 2) * (9.0 - x);
-                rb.velocity = new Vector2(rb.velocity.x, (flightTime * System.Convert.ToSingle(charUp) / 5f));
-                flightTime += Time.deltaTime;
-                if (flightTime < 1.5)
-                {
-                    rb.drag = 50;
-                }
-                else if (flightTime > 4.5)
-                {
-                    rb.drag = 30;
-                }
-                else
-                {
-                    rb.drag = jumpDrag;
-                }
-            }
+            jumpCount += 1;
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
             flyJump = false;
-            print("flyjump: " + flyJump);
         }
         //Drift mechanic
         if (Input.GetKey("space") && rb.velocity.y < 0)
