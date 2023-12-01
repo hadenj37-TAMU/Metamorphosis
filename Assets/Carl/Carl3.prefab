@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 996131348420920204}
   - component: {fileID: 5971972992611780904}
   - component: {fileID: 6508689494250435769}
+  - component: {fileID: -1484744725530792343}
   m_Layer: 0
   m_Name: Carl3
   m_TagString: Player
@@ -173,13 +174,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d773749cf866145c283188ebbfd193f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swimSpeed: 4
+  anim: {fileID: 0}
+  swimSpeed: 6
   jumpableGround:
     serializedVersion: 2
     m_Bits: 72
   swimWater:
     serializedVersion: 2
     m_Bits: 16
+  rapidWater:
+    serializedVersion: 2
+    m_Bits: 0
+  rapidSpeed: 2
 --- !u!114 &5971972992611780904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodText: {fileID: 0}
   nextForm: {fileID: 5591914746600287609, guid: 4288ba26083855c49b18be26725f14d8, type: 3}
+  playFoodSound: {fileID: 8300000, guid: cdeaba2088a6a44bd9145946d7b1e249, type: 3}
+  myAudioSource: {fileID: 0}
 --- !u!251 &6508689494250435769
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -213,3 +221,24 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!95 &-1484744725530792343
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927647825585913157}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb7e0db81784b4d6087d4626f6e5c5f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
