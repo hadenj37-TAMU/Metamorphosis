@@ -9,6 +9,7 @@ public class FoodCollection : MonoBehaviour
 
     [SerializeField] private Text FoodText;
     [SerializeField] public GameObject nextForm;
+    [SerializeField] public int foodNeeded;
     public AudioClip playFoodSound;
     public AudioSource myAudioSource;
 
@@ -19,12 +20,15 @@ public class FoodCollection : MonoBehaviour
 
     private void Mature() 
     {
-        collected = 0;
-        FoodText.text = "Food: " + collected + "/10";
+        if (nextForm)
+        {
+            collected = 0;
+            FoodText.text = "Food: " + collected + "/" + foodNeeded;
 
-        GameObject newModel = Instantiate(nextForm, transform.position, transform.rotation);
-        gameObject.transform.SetParent(newModel.transform);
-        gameObject.SetActive(false);
+            GameObject newModel = Instantiate(nextForm, transform.position, transform.rotation);
+            gameObject.transform.SetParent(newModel.transform);
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,8 +40,8 @@ public class FoodCollection : MonoBehaviour
 
             collision.gameObject.SetActive(false);
             collected++;
-            FoodText.text = "Food: " + collected + "/10";
-            if (collected == 10) {
+            FoodText.text = "Food: " + collected + "/" +foodNeeded;
+            if (collected == foodNeeded) {
                 Invoke("Mature", 0.5f);
             }
         }
