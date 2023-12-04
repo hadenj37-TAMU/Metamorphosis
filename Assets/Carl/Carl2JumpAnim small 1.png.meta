@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e61741f5d36fe347a16d10e69370e07
+guid: 4883c88882f0daa429de18dce3083478
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,20 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -106,24 +119,11 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: egganimation_0
+      name: Carl2JumpAnim_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c330da07857974293de97f79fcb0a1
-      internalID: 1354356995
+      spriteID: 8961173c0e8299d44bf024cedb45d2a3
+      internalID: -1470170399
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egganimation_1
+      name: Carl2JumpAnim_1
       rect:
         serializedVersion: 2
         x: 64
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f702a9966dba1764a92cff6686f1816e
-      internalID: -789810089
+      spriteID: 01117135b72c5c0409e92fa246e45f1e
+      internalID: 2004657239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egganimation_2
+      name: Carl2JumpAnim_2
       rect:
         serializedVersion: 2
         x: 128
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea25ba6e201d83c4cb83093f5cd2c5f8
-      internalID: 152837597
+      spriteID: e521c9db5073e7843be93b237d507b8c
+      internalID: 658753811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egganimation_3
+      name: Carl2JumpAnim_3
       rect:
         serializedVersion: 2
         x: 192
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c994d86c3d65ca42bad3c9714298a77
-      internalID: 1702187784
+      spriteID: eb5daab228b8d7243b36baeeda0984e7
+      internalID: 229240598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egganimation_4
+      name: Carl2JumpAnim_4
       rect:
         serializedVersion: 2
         x: 256
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f3d6012a2e29d74086dfeb2b2b44e84
-      internalID: -1129872673
+      spriteID: b15af5a273fb8634faccdf804bf522df
+      internalID: 1618951183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egganimation_5
+      name: Carl2JumpAnim_5
       rect:
         serializedVersion: 2
         x: 320
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5970ea8b75af304dae19e54c8be5b67
-      internalID: -1665675390
+      spriteID: 2f35ef35631d906458c65cd156cc48e8
+      internalID: 237258448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: egganimation_6
+      name: Carl2JumpAnim_6
       rect:
         serializedVersion: 2
         x: 384
@@ -263,71 +263,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28350385ff14f8e4b8df405548f43a80
-      internalID: -1869411674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: egganimation_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee425f4eab0b8984b97be9e91617abf6
-      internalID: -216766182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: egganimation_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8f79b9313b8ef0449a22a4a79676f72
-      internalID: -1866103632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: egganimation_9
-      rect:
-        serializedVersion: 2
-        x: 576
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8d702d7e2d02d34085fd63bbcba211e
-      internalID: -1280042681
+      spriteID: aceefe260c386f34a8d7f3003caed9b4
+      internalID: -1428522477
       vertices: []
       indices: 
       edges: []
@@ -343,16 +280,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      egganimation_0: 1354356995
-      egganimation_1: -789810089
-      egganimation_2: 152837597
-      egganimation_3: 1702187784
-      egganimation_4: -1129872673
-      egganimation_5: -1665675390
-      egganimation_6: -1869411674
-      egganimation_7: -216766182
-      egganimation_8: -1866103632
-      egganimation_9: -1280042681
+      Carl2JumpAnim_0: -1470170399
+      Carl2JumpAnim_1: 2004657239
+      Carl2JumpAnim_2: 658753811
+      Carl2JumpAnim_3: 229240598
+      Carl2JumpAnim_4: 1618951183
+      Carl2JumpAnim_5: 237258448
+      Carl2JumpAnim_6: -1428522477
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
