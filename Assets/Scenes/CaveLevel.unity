@@ -1419,7 +1419,7 @@ PrefabInstance:
     - target: {fileID: 9128545738287477306, guid: 84500d61d1f344e4e884fa74e51caa81, type: 3}
       propertyPath: playFoodSound
       value: 
-      objectReference: {fileID: 8300000, guid: cdeaba2088a6a44bd9145946d7b1e249, type: 3}
+      objectReference: {fileID: 8300000, guid: f3b10aa3f6a5d4255a6e71b127f69273, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -98856,7 +98856,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cdeaba2088a6a44bd9145946d7b1e249, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3b10aa3f6a5d4255a6e71b127f69273, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
