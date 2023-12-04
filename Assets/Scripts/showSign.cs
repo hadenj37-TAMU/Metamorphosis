@@ -11,7 +11,7 @@ public class showSign : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (foodText.GetComponent<UnityEngine.UI.Text>().text == "Food: 20/20")
+        if (foodText.GetComponent<UnityEngine.UI.Text>().text == "Food: 30/30")
         {
             textBox.SetActive(false);
         }

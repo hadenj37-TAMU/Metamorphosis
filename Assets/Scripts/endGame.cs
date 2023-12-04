@@ -11,7 +11,7 @@ public class endGame : MonoBehaviour
 
     private void Update()
     {
-        if (foodText.GetComponent<UnityEngine.UI.Text>().text == "Food: 20/20")
+        if (foodText.GetComponent<UnityEngine.UI.Text>().text == "Food: 30/30")
         {
             print("gotFood");
             gotFood = true;
