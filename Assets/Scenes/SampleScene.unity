@@ -307,7 +307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Food: 0/10'
+  m_Text: 'Food: 0/30'
 --- !u!222 &84832570
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2699,7 +2699,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f3b10aa3f6a5d4255a6e71b127f69273, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
