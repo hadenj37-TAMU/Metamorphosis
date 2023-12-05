@@ -2698,7 +2698,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f3b10aa3f6a5d4255a6e71b127f69273, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -46575,7 +46575,11 @@ PrefabInstance:
     - target: {fileID: 5695577981544299008, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: nextForm
       value: 
-      objectReference: {fileID: 5591914746600287609, guid: 4288ba26083855c49b18be26725f14d8, type: 3}
+      objectReference: {fileID: 6404455626439680946, guid: 9e7c91090cf4b405a8618ac04a5ed442, type: 3}
+    - target: {fileID: 5695577981544299008, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
+      propertyPath: foodNeeded
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 5695577981544299008, guid: 2a067be4ce36b4d428eb4c1e31fb3d3f, type: 3}
       propertyPath: playFoodSound
       value: 
