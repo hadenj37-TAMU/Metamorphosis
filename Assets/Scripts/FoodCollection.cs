@@ -22,9 +22,6 @@ public class FoodCollection : MonoBehaviour
     {
         if (nextForm)
         {
-            collected = 0;
-            FoodText.text = "Food: " + collected + "/" + foodNeeded;
-
             GameObject newModel = Instantiate(nextForm, transform.position, transform.rotation);
             gameObject.transform.SetParent(newModel.transform);
             gameObject.SetActive(false);
